@@ -38,5 +38,11 @@
     <ClCompile Include="DynArray.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\JusoArray.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SinggleList.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

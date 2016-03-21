@@ -6,9 +6,9 @@
 
 #define ELETYPE int
 ELETYPE *ar;
-unsigned size;
-unsigned num;
-unsigned growby;
+unsigned size;  // 할단된 배열의 크기
+unsigned num;   // 배열에 삽입된 개수  
+unsigned growby;// 배열 확장 시 여유분의 크기
 
 void InitArray(unsigned asize, unsigned agrowby)
 {
@@ -22,12 +22,12 @@ void Insert(int idx, ELETYPE value)
 {
     unsigned need;
 
-    need = num + 1;
-
+    need = num + 1; // 현재 삽입된 배열의 + 1 이 필요한 배열의 크기
+    
     if (need > size) 
-    {
-        size = need + growby;
-        ar = (ELETYPE*)realloc(ar, size*sizeof(ELETYPE));
+    {   // 할당된 배열의 크기보다 필요한 배열의 크기가 더 클때 배열을 확장한다.
+        size = need + growby; // 필요한 크기 + 여유분 크기
+        ar = (ELETYPE*)realloc(ar, size*sizeof(ELETYPE)); // 메모리 재할당
     }
     
     memmove(ar+idx+1, ar+idx, (num-idx)*sizeof(ELETYPE));

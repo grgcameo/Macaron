@@ -32,16 +32,31 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="src\GitTraningMain.cpp">
+    <ClCompile Include="src\DoubleList.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="DynArray.cpp">
+    <ClCompile Include="src\DynArray.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GitTraningMain.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\JusoArray.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\SinggleList.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\temp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JusoList.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Stack.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextCalc.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

@@ -77,5 +77,11 @@
     <ClCompile Include="src\LevelTraverse.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\SequencetailSearch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BinarySearch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

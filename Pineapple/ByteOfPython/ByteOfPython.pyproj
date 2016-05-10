@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>675068c0-d6df-4089-a734-f00360ddd989</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>function1.py</StartupFile>
+    <StartupFile>backup_ver2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,28 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="backup_ver1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="backup_ver2.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ByteOfPython.py" />
+    <Compile Include="ds_reference.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ds_seq.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ds_using_dict.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ds_using_list.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ds_using_tuple.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="function1.py">
       <SubType>Code</SubType>
     </Compile>

@@ -83,5 +83,8 @@
     <ClCompile Include="src\BinarySearch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="union.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

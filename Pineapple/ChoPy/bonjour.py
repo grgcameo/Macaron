@@ -1,23 +1,29 @@
 # coding=utf-8
 
-# def
-MY_FILE_NAME = "FirstFile.txt"
+import threading
+import random
 
-def writeToFile(strInput):
-    my_file = open(MY_FILE_NAME, "wb")
-    print (my_file.mode)
-    print (my_file.name)
-    my_file.write(strInput)
-    my_file.close()
-
-def readFromFile():
-    my_file = open(MY_FILE_NAME, "rb")
-    print (my_file.read())
-    my_file.close()
+class Messenger(threading.Thread):
+    def run(self):
+        for _ in range(10):
+            print (threading.currentThread().getName())
 
 
-writeToFile("Hello, python!!")
-readFromFile()
+a = Messenger(name = "a 입니다.")
+b = Messenger(name = "b 입니다.")
 
 
 
+a.start()
+b.start()
+
+
+
+class ChatOn(threading.Thread):
+    def run(self):
+        print (random.randrange(1, 5))
+
+
+c = ChatOn()
+
+c.start()

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="nav">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title id="page-title" data-i18n="nav.STR_RESIDENTIAL_GATEWAY_01_ID"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=960">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <link href="theme/basic/css/style.css" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="theme/basic/images/favicon.ico">
+
+    <!-- jQuery -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/i18next-1.7.3.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/BaseView.js"></script>
+    <script src="js/MenuController.js"></script>
+    <script src="js/BasicController.js"></script>
+    <script src="js/WirelessController.js"></script>
+    <script src="js/AdvancedController.js"></script>
+    <script src="js/SecurityController.js"></script>
+    <script src="js/ParentalController.js"></script>
+    <script src="js/UsbControlloer.js"></script>
+    <script src="js/BatteryController.js"></script>
+    <script src="js/MtaController.js"></script>
+    <script src="js/SystemController.js"></script>
+    <script src="js/SJBMode.js"></script>
+    <script src="js/CsTest.js"></script>
+</head>
+<body>
+    <!-- LoadingBar -->
+    <div id="LoadingBar" style="display:none">
+        <div id="LoadingImg"></div>
+        <div id="LoadingTxt" data-i18n="nav.STR_LOADING_11_ID"></div>
+    </div>
+
+    <!-- dialog2 Modal -->
+    <div id="dialog2" class="modal-wrapper" style="display:none;">
+        <div class="modal-dialog modal">
+            <h2 id="dialog2_title" data-i18n="nav.STR_SAVE_CHANGES_ID"></h2>
+            <div class="modal-content">
+                <p id="dialog2_content"></p>
+            </div>
+            <div class="btn-wrapper">
+                <button type="button" id="dialog2_firstBtn" class="btn-large left" data-i18n="nav.STR_NO_ID"></button>
+                <button type="button" id="dialog2_secondBtn" class="btn-large grey" data-i18n="nav.STR_YES_ID"></button>
+            </div>
+            <div><a class="close-btn" data-i18n="nav.STR_CLOSE_ID"></a></div>
+        </div>
+    </div>
+
+    <!-- dialog3 Modal -->
+    <div id="dialog3" class="modal-wrapper" style="display:none;">
+        <div class="modal-dialog modal">
+            <div class="modal-content">
+                <p id="dialog3_content"></p>
+            </div>
+            <div class="btn-wrapper">
+                <button type="button" id="dialog3_confirmBtn" class="btn-large grey" data-i18n="nav.STR_CONFIRM_03_ID"></button>
+            </div>
+            <div><a class="close-btn" data-i18n="nav.STR_CLOSE_ID"></a></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="modal-wrapper" class="modal-wrapper" style="display:none;">
+        <div id="modal-login" class="modal">
+            <h2 data-i18n="nav.STR_LOGIN_ID"></h2>
+            <p data-i18n="nav.STR_MESG_4816_ID"></p>
+            <form>
+                <ul class="login-form">
+                    <li>
+                        <input id="user" type="text" name="" value="admin" tabindex="1" maxlength="64" class="login">
+                        <label for="" data-i18n="nav.STR_USER_NAME_ID"></label>
+                    </li>
+                    <li>
+                        <input id="Password1" type="password" name="" value="" tabindex="2" maxlength="64" class="login">
+                        <label for="" data-i18n="nav.STR_PASSWORD_01_ID"></label>
+                    </li>
+                </ul>
+                <div class="btn-wrapper"><button type="button" id="login-btn" class="btn-large" data-i18n="nav.STR_LOGIN_ID"></button></div>
+            </form>
+            <div><a href="javascript:void(0)" id="login-close" class="close-btn" data-i18n="nav.STR_CLOSE_ID"></a></div>
+        </div>
+    </div>
+
+    <!-- User Parental Login Modal -->
+    <div id="user-modal-wrapper" class="modal-wrapper" style="height: 900px;">
+        <div id="modal-login" class="modal">
+            <h2 data-i18n="nav.STR_PARENTAL_CONTROL_02_ID"></h2>
+            <p data-i18n="nav.STR_MESG_5162_ID"></p>
+            <form onsubmit="return false;">
+                <ul class="login-form">
+                    <li>
+                        <input id="userpassword" type="password" name="" value="" tabindex="" maxlength="64" class="login">
+                        <label for="" data-i18n="nav.STR_PASSWORD_01_ID"></label>
+                        <input type="text" style="display: none;" />
+
+                    </li>
+                </ul>
+                <div class="btn-wrapper"><button type="button" id="user-login-btn" class="btn-large" data-i18n="nav.STR_LOGIN_ID"></button></div>
+            </form>
+            <div><a href="javascript:void(0)" id="user-login-close" class="close-btn" data-i18n="nav.STR_CLOSE_ID"></a></div>
+        </div>
+    </div>
+
+    <!-- System Upgrade Alert -->
+    <div id="upgrade_popup" class="modal-wrapper" style="display:;">
+        <div id="modal-alert" class="modal">
+            <h2 data-i18n="nav.STR_WARNING_03_ID"></h2>
+            <div class="modal-content">
+                <p data-i18n="nav.STR_MESG_5130_ID">
+                </p>
+            </div>
+            <div class="img-wrapper"><img src="theme/basic/images/upgrade_loading.gif"></div>
+        </div>
+    </div>
+
+    <!-- System Reset Alert -->
+    <div id="reset_popup" class="modal-wrapper" style="display:;">
+        <div class="modal-dialog modal">
+            <div class="modal-content">
+                <p data-i18n="nav.STR_MESG_4819_ID"></p>
+            </div>
+            <div class="img-wrapper" style="text-align:center">
+                <img src="theme/basic/images/popup_loading.gif">
+            </div>
+        </div>
+    </div>
+
+    <!-- help Dialog -->
+    <div id="helpDialog" class="modal-wrapper" style="display:none;">
+    </div>
+
+    <hr>
+    <div id="wrapper" class="nav">
+
+        <!-- Main Navigation -->
+        <div id="global-nav-wrapper">
+            <h1 class="logo"><img src="theme/basic/images/humax_logo.png" alt=""></h1>
+            <ul id="global-nav">
+                <li class="on"><a href="javascript:void(0)" class="basic" main="basic" sub="status" style="display:none;" data-i18n="nav.STR_BASIC_ID"></a></li>
+                <li><a href="javascript:void(0)" class="wireless" main="wireless" sub="radio" style="display:none;" data-i18n="nav.STR_WIRELESS_ID"></a></li>
+                <li><a href="javascript:void(0)" class="advanced" main="advanced" sub="setup" style="display:none;" data-i18n="nav.STR_ADVANCED_ID"></a></li>
+                <li><a href="javascript:void(0)" class="security" main="security" sub="firewall" style="display:none;" data-i18n="nav.STR_SECURITY_01_ID"></a></li>
+                <li><a href="javascript:void(0)" class="parental" main="parental-control" sub="usersetting" style="display:none;" data-i18n="nav.STR_PARENTAL_CONTROL_02_ID"></a></li>
+                <li><a href="javascript:void(0)" class="storage" main="usb-storage" sub="approveddevice" style="display:none;" data-i18n="nav.STR_USB_STORAGE_02_ID"> </a></li>
+                <li><a href="javascript:void(0)" class="battery" main="battery" sub="ups" style="display:none;" data-i18n="nav.STR_BATTERY_02_ID"></a></li>
+                <li><a href="javascript:void(0)" class="mta" main="mta" sub="mta_status" style="display:none;">MTA</a></li>
+                <li><a href="javascript:void(0)" class="system" main="system" sub="timesetting" style="display:none;" data-i18n="nav.STR_SYSTEM_ID"></a></li>
+                <li><a href="javascript:void(0)" class="sjbmode" main="sjb" sub="sjb_mode" style="display:none;" data-i18n="nav.STR_SJB_MODE_ID"> </a></li>
+                <li><a href="javascript:void(0)" class="cs" main="cs-test" sub="function_test" style="display:none;" data-i18n="nav.STR_CS_TEST_01_ID"></a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <!-- Sub Navigation -->
+        <div id="sub-nav-wrapper">
+
+        </div>
+
+        <hr>
+
+        <h1 class="logo2"></h1>
+
+        <!-- Section -->
+        <div id="section" class="section">
+
+            <!-- Help Btn -->
+            <p>
+                <button type="button" id="quick-btn" class="small-btn-gray" data-i18n="nav.RG_STR_QUICK_SETUP_ID"> </button>
+                <button type="button" id="help-btn" class="small-btn" data-i18n="nav.RG_STR_HELP_ID"></button>
+            </p>
+
+            <div id="contents-display">
+
+            </div>
+
+            <hr>
+
+            <!-- Help & Scroll Top Btn -->
+            <p><a href="javascript:void(0)" id="scroll-top" class="scroll-top-btn" data-i18n="nav.STR_TOP_07_ID"></a></p>
+        </div>
+
+    </div>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/ie.js"></script>
+    <![endif]-->
+    <!--[if IE 8]>
+    <link href="theme/basic/css/style_ie.css" rel="stylesheet" media="screen">
+    <![endif]-->
+    <!--[if IE 7]>
+    <link href="theme/basic/css/style_ie.css" rel="stylesheet" media="screen">
+    <![endif]-->
+
+
+</body>
+</html>

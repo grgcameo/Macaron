@@ -4,7 +4,40 @@ import time
 
 class HtmlFileToCode:
 
-    # Discriptor
+    def SelectFileConvert(self, strSelectFile):
+
+        aNameInfoList = self.ExtractNameInfoToList(strSelectFile)
+
+        for x in aNameInfoList:
+            print (x)
+
+        self._DoMakeDescriptor(aNameInfoList[2])
+        self._DoMakeClass(aNameInfoList[2], aNameInfoList[1])
+        self._DoMakeContents(aNameInfoList[2], aNameInfoList[1], aNameInfoList[0])
+
+    def SelectPathConvert(self, strSelectPath):
+        #디렉토리 내에 파일개수 만큼 SelectFIleConvert() 실행하면 될듯...
+
+        aDirectoryFileList = [
+            'aaaa.html',
+            'bbbb.html'
+        ]
+
+        for file in aDirectoryFileList :
+            self.SelectFileConvert(file)
+
+
+
+    def ExtractNameInfoToList(self, strFileName):
+
+        aNameInfoList = []
+
+        aNameInfoList.append(strFileName)
+        aNameInfoList.append(strFileName.translate(None, '.'))
+        aNameInfoList.append(aNameInfoList[1]+'.cpp')
+
+        return aNameInfoList
+
     def _DoMakeDescriptor(self, strOutFile):
         outFile = open(strOutFile, 'a')
         strFIleName = '//  Filename: {} \n'.format(strOutFile)
@@ -23,7 +56,6 @@ class HtmlFileToCode:
         outFile.writelines(discriptorList)
         outFile.close()
 
-    # 클래스 정의
     def _DoMakeClass(self, strOutFile, strClassName):
 
         outFile = open(strOutFile, 'a')
@@ -45,8 +77,7 @@ class HtmlFileToCode:
         outFile.writelines(classInfoList)
         outFile.close()
 
-    # 본문 작성
-    def _DoMakeContents(self, strOutFile, strInputFile, strClassName):
+    def _DoMakeContents(self, strOutFile, strClassName, strInputFile):
 
         inputFile = open(strInputFile, 'r')
         outFile = open(strOutFile, 'a')
@@ -81,7 +112,6 @@ class HtmlFileToCode:
         outFile.writelines(contentsArrayPartList)
         outFile.writelines(contentsTailPartList)
 
-
         inputFile.close()
         outFile.close()
 
@@ -89,11 +119,8 @@ class HtmlFileToCode:
 
 # main test
 test = HtmlFileToCode()
-iName = 'myClass.html'
-fName = 'myClass.cpp'
-cName = 'myClass'
-test._DoMakeDescriptor(fName)
-test._DoMakeClass(fName, cName)
-test._DoMakeContents(fName, iName, cName)
+test.SelectFileConvert('myClass.html')
+
+
 
 

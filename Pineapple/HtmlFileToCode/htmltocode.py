@@ -2,29 +2,18 @@
 
 import time
 
-class HtmlFileToCode:
+class HtmlToCode:
 
     def SelectFileConvert(self, strSelectFile):
 
         aNameInfoList = self.ExtractNameInfoToList(strSelectFile)
-
-        for x in aNameInfoList:
-            print (x)
-
         self._DoMakeDescriptor(aNameInfoList[2])
         self._DoMakeClass(aNameInfoList[2], aNameInfoList[1])
         self._DoMakeContents(aNameInfoList[2], aNameInfoList[1], aNameInfoList[0])
 
+
     def SelectPathConvert(self, strSelectPath):
-        #디렉토리 내에 파일개수 만큼 SelectFIleConvert() 실행하면 될듯...
-
-        aDirectoryFileList = [
-            'aaaa.html',
-            'bbbb.html'
-        ]
-
-        for file in aDirectoryFileList :
-            self.SelectFileConvert(file)
+        pass
 
 
 
@@ -37,6 +26,7 @@ class HtmlFileToCode:
         aNameInfoList.append(aNameInfoList[1]+'.cpp')
 
         return aNameInfoList
+
 
     def _DoMakeDescriptor(self, strOutFile):
         outFile = open(strOutFile, 'a')
@@ -55,6 +45,7 @@ class HtmlFileToCode:
 
         outFile.writelines(discriptorList)
         outFile.close()
+
 
     def _DoMakeClass(self, strOutFile, strClassName):
 
@@ -76,6 +67,7 @@ class HtmlFileToCode:
 
         outFile.writelines(classInfoList)
         outFile.close()
+
 
     def _DoMakeContents(self, strOutFile, strClassName, strInputFile):
 
@@ -114,13 +106,3 @@ class HtmlFileToCode:
 
         inputFile.close()
         outFile.close()
-
-
-
-# main test
-test = HtmlFileToCode()
-test.SelectFileConvert('myClass.html')
-
-
-
-

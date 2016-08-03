@@ -28,7 +28,7 @@ class MyWindow(QMainWindow, form_class):
     def btn_ShutDown_Clicked(self):
         QMessageBox.about(self, "message", "ShutDown")
 
-
+    #create_test
 
 
 

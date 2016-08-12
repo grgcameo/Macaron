@@ -29,7 +29,7 @@ class MyWindow(QMainWindow, form_class):
         QMessageBox.about(self, "message", "ShutDown")
 
     #create_test
-    #commit test
+
 
 
 if __name__ == "__main__":

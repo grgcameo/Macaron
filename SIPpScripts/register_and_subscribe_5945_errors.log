@@ -1,0 +1,81 @@
+sipp: The following events occured:
+2018-05-25	15:01:21:869	1527228081.869035: Dead call 62b220bb53240d92@50.50.50.20 (successful), received 'REGISTER sip:172.16.0.91 SIP/2.0
+v: SIP/2.0/UDP 50.50.50.20;branch=z9hG4bK2b2230d74ce1545b0;rport
+Route: <sip:172.16.0.91:5060;lr>
+Max-Forwards: 70
+f: 50012343 <sip:50012343@172.16.0.91>;tag=98f1e98d58
+t: 50012343 <sip:50012343@172.16.0.91>
+i: 62b220bb53240d92@50.50.50.20
+CSeq: 1159021059 REGISTER
+Allow: ACK, BYE, CANCEL, INFO, INVITE, NOTIFY, OPTIONS, PRACK, REFER, SUBSCRIBE, UPDATE
+u: dialog, message-summary, refer, reg, ua-profile
+Authorization: Digest username="50012343", realm="172.16.0.91", uri="sip:172.16.0.91", nonce="", response="", algorithm=MD5
+m: <sip:50012343@50.50.50.20>;expires=3600
+k: 100rel, eventlist, replaces, tdialog, timer
+l: 0
+
+'.
+2018-05-25	15:01:22:388	1527228082.388249: Dead call 62b220bb53240d92@50.50.50.20 (successful), received 'REGISTER sip:172.16.0.91 SIP/2.0
+v: SIP/2.0/UDP 50.50.50.20;branch=z9hG4bK2b2230d74ce1545b0;rport
+Route: <sip:172.16.0.91:5060;lr>
+Max-Forwards: 70
+f: 50012343 <sip:50012343@172.16.0.91>;tag=98f1e98d58
+t: 50012343 <sip:50012343@172.16.0.91>
+i: 62b220bb53240d92@50.50.50.20
+CSeq: 1159021059 REGISTER
+Allow: ACK, BYE, CANCEL, INFO, INVITE, NOTIFY, OPTIONS, PRACK, REFER, SUBSCRIBE, UPDATE
+u: dialog, message-summary, refer, reg, ua-profile
+Authorization: Digest username="50012343", realm="172.16.0.91", uri="sip:172.16.0.91", nonce="", response="", algorithm=MD5
+m: <sip:50012343@50.50.50.20>;expires=3600
+k: 100rel, eventlist, replaces, tdialog, timer
+l: 0
+
+'.
+2018-05-25	15:01:23:388	1527228083.388404: Dead call 62b220bb53240d92@50.50.50.20 (successful), received 'REGISTER sip:172.16.0.91 SIP/2.0
+v: SIP/2.0/UDP 50.50.50.20;branch=z9hG4bK2b2230d74ce1545b0;rport
+Route: <sip:172.16.0.91:5060;lr>
+Max-Forwards: 70
+f: 50012343 <sip:50012343@172.16.0.91>;tag=98f1e98d58
+t: 50012343 <sip:50012343@172.16.0.91>
+i: 62b220bb53240d92@50.50.50.20
+CSeq: 1159021059 REGISTER
+Allow: ACK, BYE, CANCEL, INFO, INVITE, NOTIFY, OPTIONS, PRACK, REFER, SUBSCRIBE, UPDATE
+u: dialog, message-summary, refer, reg, ua-profile
+Authorization: Digest username="50012343", realm="172.16.0.91", uri="sip:172.16.0.91", nonce="", response="", algorithm=MD5
+m: <sip:50012343@50.50.50.20>;expires=3600
+k: 100rel, eventlist, replaces, tdialog, timer
+l: 0
+
+'.
+2018-05-25	15:01:25:388	1527228085.388426: Dead call 62b220bb53240d92@50.50.50.20 (successful), received 'REGISTER sip:172.16.0.91 SIP/2.0
+v: SIP/2.0/UDP 50.50.50.20;branch=z9hG4bK2b2230d74ce1545b0;rport
+Route: <sip:172.16.0.91:5060;lr>
+Max-Forwards: 70
+f: 50012343 <sip:50012343@172.16.0.91>;tag=98f1e98d58
+t: 50012343 <sip:50012343@172.16.0.91>
+i: 62b220bb53240d92@50.50.50.20
+CSeq: 1159021059 REGISTER
+Allow: ACK, BYE, CANCEL, INFO, INVITE, NOTIFY, OPTIONS, PRACK, REFER, SUBSCRIBE, UPDATE
+u: dialog, message-summary, refer, reg, ua-profile
+Authorization: Digest username="50012343", realm="172.16.0.91", uri="sip:172.16.0.91", nonce="", response="", algorithm=MD5
+m: <sip:50012343@50.50.50.20>;expires=3600
+k: 100rel, eventlist, replaces, tdialog, timer
+l: 0
+
+'.
+2018-05-25	15:01:28:388	1527228088.388613: Dead call 62b220bb53240d92@50.50.50.20 (successful), received 'REGISTER sip:172.16.0.91 SIP/2.0
+v: SIP/2.0/UDP 50.50.50.20;branch=z9hG4bK2b2230d74ce1545b0;rport
+Route: <sip:172.16.0.91:5060;lr>
+Max-Forwards: 70
+f: 50012343 <sip:50012343@172.16.0.91>;tag=98f1e98d58
+t: 50012343 <sip:50012343@172.16.0.91>
+i: 62b220bb53240d92@50.50.50.20
+CSeq: 1159021059 REGISTER
+Allow: ACK, BYE, CANCEL, INFO, INVITE, NOTIFY, OPTIONS, PRACK, REFER, SUBSCRIBE, UPDATE
+u: dialog, message-summary, refer, reg, ua-profile
+Authorization: Digest username="50012343", realm="172.16.0.91", uri="sip:172.16.0.91", nonce="", response="", algorithm=MD5
+m: <sip:50012343@50.50.50.20>;expires=3600
+k: 100rel, eventlist, replaces, tdialog, timer
+l: 0
+
+'.

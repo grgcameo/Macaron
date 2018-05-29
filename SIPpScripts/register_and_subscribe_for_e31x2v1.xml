@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE scenario SYSTEM "sipp.dtd">
+
+<scenario name="Basic UAS registrar with authentication">
+
+<!-- ./sipp 30.30.30.194 -sf register_and_subscribe_for_e31x2v1.xml -i 172.16.0.22 -s 50031711 -->
+
+    <recv request="SUBSCRIBE" optional="true" next="subs_resp"/>
+    <recv request="REGISTER">
+    </recv>
+    <send>
+    <![CDATA[
+
+    SIP/2.0 401 Unauthorized
+    [last_Via:]
+    [last_From:]
+    [last_To:];tag=[pid]SIPpTag01[call_number]
+    [last_Call-ID:]
+    [last_CSeq:]
+    Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY
+    k: replaces, timer
+    WWW-Authenticate: Digest algorithm=MD5, realm="test.example.com", nonce="47ebe028cda119c35d4877b383027d28da013815"
+    Content-Length: 0
+
+    ]]>
+    </send>
+    
+    <recv request="REGISTER">
+    <!-- 
+            Charter ?? 200ok contact ??? user sip uri ??? ??? ??? ??.
+            
+            ex> Contact: <sip:50031711@30.30.30.194:5060>;expires=3600    
+            
+            To Do : ?? 200 ok ?? ?? ? contact ??? parameter ? remote_ip ? cmd?? ?? ?? ?? ?? 
+                        recv action ??? ??? remote_ip ? ?? ? ? ??? ?? 
+    -->
+    </recv>
+        
+    <send crlf="true">
+    <![CDATA[
+
+    SIP/2.0 200 OK
+    [last_Via:]=5060
+    [last_From:]
+    [last_To:];tag=[call_number]
+    [last_Call-ID:]
+    [last_CSeq:]
+    Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY
+    k: replaces, timer    
+    Expires: 3600
+    Contact: <sip:[service]@[remote_ip]:[remote_port]>;expires=3600
+    Content-Length: 0    
+
+    ]]>
+    </send>
+    
+    <nop next="finished"/> 
+    
+    <label id="subs_resp" />
+    
+    <send crlf="true">
+    <![CDATA[
+
+    SIP/2.0 200 OK
+    [last_Via:]=5060
+    [last_From:]
+    [last_To:];tag=[call_number]
+    [last_Call-ID:]
+    [last_CSeq:]
+    Contact: <sip:[service]@[remote_ip]:[remote_port]>;expires=3600
+    Expires: 3600
+    Content-Length: 0    
+
+    ]]>
+    </send>
+
+    <label id="finished">
+
+    <!-- definition of the response time repartition table (unit is ms)   -->
+    <ResponseTimeRepartition value="10, 20, 30, 40, 50, 100, 150, 200"/>
+
+    <!-- definition of the call length repartition table (unit is ms)     -->
+    <CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000"/>
+</scenario>
